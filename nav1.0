@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="站长工具导航 - 精选开发资源与工具集合，助您快速找到各类优质资源，提升开发与站点运营效率">
+    <meta name="description" content="工具导航 - 精选开发资源与工具集合，助您快速找到各类优质资源，提升开发与站点运营效率">
     <meta name="keywords" content="站长工具,开发资源,网站模板,SEO工具,域名查询,竞品分析">
     <title>站长工具导航 - 精选开发资源与工具集合</title>
     
@@ -585,6 +585,14 @@
                 const toolCard = createToolCard(tool, category, index);
                 toolsGrid.appendChild(toolCard);
             });
+            
+            // 立即显示新加载的工具卡片
+            setTimeout(() => {
+                const newCards = toolsGrid.querySelectorAll('.tool-card');
+                newCards.forEach(card => {
+                    card.classList.add('visible');
+                });
+            }, 50);
         }
 
         // Create tool card
@@ -702,50 +710,57 @@
         // Render Mermaid Chart
         function renderMermaidChart() {
             const chartElement = document.getElementById('mermaidChart');
-            const mermaidCode = `
-                graph TD
-                    A[站长工具导航] --> B[关键词研究]
-                    A --> C[上站必备]
-                    A --> D[竞品调研]
-                    A --> E[网站模板]
-                    A --> F[导航模板]
-                    A --> G[资讯中心]
-                    A --> H[精品帖子]
-                    
-                    B --> B1[Search Suggest Tips]
-                    B --> B2[Toolify 榜单]
-                    B --> B3[AI 导航站需求]
-                    B --> B4[关键词难度分析]
-                    
-                    C --> C1[域名查询]
-                    C --> C2[网站托管]
-                    C --> C3[数据分析]
-                    
-                    D --> D1[流量分析]
-                    D --> D2[外链查看]
-                    D --> D3[关键词追踪]
-                    
-                    E --> E1[博客框架]
-                    E --> E2[SaaS 模板]
-                    E --> E3[着陆页模板]
-                    
-                    F --> F1[导航平台]
-                    F --> F2[AI 工具导航]
-                    F --> F3[开源项目集合]
-                    
-                    style A fill:#3b82f6,stroke:#1e40af,stroke-width:3px,color:#fff
-                    style B fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
-                    style C fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff
-                    style D fill:#ef4444,stroke:#dc2626,stroke-width:2px,color:#fff
-                    style E fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#fff
-                    style F fill:#06b6d4,stroke:#0891b2,stroke-width:2px,color:#fff
-                    style G fill:#f97316,stroke:#ea580c,stroke-width:2px,color:#fff
-                    style H fill:#ec4899,stroke:#db2777,stroke-width:2px,color:#fff
-            `;
             
-            mermaid.render('mermaidChart', mermaidCode).then(({ svg }) => {
-                chartElement.innerHTML = svg;
-            });
+            try {
+                const mermaidCode = `graph TD
+    A["站长工具导航"] --> B["关键词研究"]
+    A --> C["上站必备"]
+    A --> D["竞品调研"]
+    A --> E["网站模板"]
+    A --> F["导航模板"]
+    A --> G["资讯中心"]
+    A --> H["精品帖子"]
+    
+    B --> B1["Search Suggest Tips"]
+    B --> B2["Toolify 榜单"]
+    B --> B3["AI 导航站需求"]
+    B --> B4["关键词难度分析"]
+    
+    C --> C1["域名查询"]
+    C --> C2["网站托管"]
+    C --> C3["数据分析"]
+    
+    D --> D1["流量分析"]
+    D --> D2["外链查看"]
+    D --> D3["关键词追踪"]
+    
+    E --> E1["博客框架"]
+    E --> E2["SaaS 模板"]
+    E --> E3["着陆页模板"]
+    
+    F --> F1["导航平台"]
+    F --> F2["AI 工具导航"]
+    F --> F3["开源项目集合"]
+    
+    style A fill:#3b82f6,stroke:#1e40af,stroke-width:3px,color:#fff
+    style B fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
+    style C fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff
+    style D fill:#ef4444,stroke:#dc2626,stroke-width:2px,color:#fff
+    style E fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#fff
+    style F fill:#06b6d4,stroke:#0891b2,stroke-width:2px,color:#fff
+    style G fill:#f97316,stroke:#ea580c,stroke-width:2px,color:#fff
+    style H fill:#ec4899,stroke:#db2777,stroke-width:2px,color:#fff`;
+                
+                mermaid.render('mermaidSvg', mermaidCode).then(({ svg }) => {
+                    chartElement.innerHTML = svg;
+                }).catch(error => {
+                    console.error('Mermaid render error:', error);
+                    chartElement.innerHTML = '<div class="text-center p-8 text-gray-500">图表加载中...</div>';
+                });
+            } catch (error) {
+                console.error('Mermaid error:', error);
+                chartElement.innerHTML = '<div class="text-center p-8 text-gray-500">图表暂时无法显示</div>';
+            }
         }
     </script>
 </body>
