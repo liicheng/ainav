@@ -1,456 +1,752 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="站长工具导航 - 精选开发资源与工具集合，助您快速找到各类优质资源，提升开发与站点运营效率">
+    <meta name="keywords" content="站长工具,开发资源,网站模板,SEO工具,域名查询,竞品分析">
     <title>站长工具导航 - 精选开发资源与工具集合</title>
-    <meta name="description" content="一站式站长工具与资源导航，包含开发模板、导航站模板、SEO工具、域名管理、AI工具等各类优质资源。">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <!-- External Resources -->
+    <link href="https://cdn.staticfile.org/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+    
     <style>
         :root {
-            --apple-blue: #007AFF;
-            --apple-gray: #8E8E93;
-            --apple-light-gray: #E5E5EA;
-            --apple-background: #F5F5F7;
-            --apple-card: #FFFFFF;
-            --apple-text: #1D1D1F;
-            --apple-secondary: #6E6E73;
-            --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            --card-radius: 12px;
-            --transition: all 0.3s ease;
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --border-color: #e5e7eb;
+            --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-        
+
+        [data-theme="dark"] {
+            --primary-color: #3b82f6;
+            --secondary-color: #1d4ed8;
+            --accent-color: #fbbf24;
+            --text-primary: #f9fafb;
+            --text-secondary: #d1d5db;
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --border-color: #374151;
+            --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+            --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            font-family: 'Noto Sans SC', Tahoma, Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", "Hiragino Sans GB", Simsun, sans-serif;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: var(--apple-text);
-            background-color: var(--apple-background);
-            padding: 0;
-            margin: 0;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
         }
-        
-        header {
-            text-align: center;
-            padding: 40px 0 20px;
-            background-color: var(--apple-card);
-            margin-bottom: 30px;
-            border-radius: 0 0 var(--card-radius) var(--card-radius);
-            box-shadow: var(--card-shadow);
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
-        
-        h1 {
-            font-size: 2.5rem;
-            color: var(--apple-blue);
-            margin-bottom: 15px;
-            font-weight: 700;
+
+        [data-theme="dark"] .glass-morphism {
+            background: rgba(17, 24, 39, 0.7);
+            border: 1px solid rgba(75, 85, 99, 0.3);
         }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--apple-secondary);
-            margin-bottom: 20px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(0);
         }
-        
-        .section {
-            margin-bottom: 40px;
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-large);
         }
-        
-        .section-title {
-            font-size: 1.8rem;
-            color: var(--apple-blue);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--apple-light-gray);
+
+        .category-tab {
+            transition: all 0.3s ease;
+            border-radius: 50px;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
         }
-        
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        
-        .card {
-            background-color: var(--apple-card);
-            border-radius: var(--card-radius);
-            box-shadow: var(--card-shadow);
-            padding: 20px;
-            transition: var(--transition);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .card-category {
-            font-size: 0.9rem;
-            color: var(--apple-gray);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .card-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--apple-text);
-        }
-        
-        .card-description {
-            font-size: 0.95rem;
-            color: var(--apple-secondary);
-            margin-bottom: 15px;
-            flex-grow: 1;
-        }
-        
-        .card-link {
-            display: inline-block;
-            color: var(--apple-blue);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            padding: 8px 15px;
-            border-radius: 20px;
-            background-color: rgba(0, 122, 255, 0.1);
-            margin-top: auto;
-        }
-        
-        .card-link:hover {
-            background-color: rgba(0, 122, 255, 0.2);
-        }
-        
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            color: var(--apple-secondary);
-            font-size: 0.9rem;
-            margin-top: 50px;
-            border-top: 1px solid var(--apple-light-gray);
-        }
-        
-        .section-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-        
-        .section-nav a {
-            display: inline-block;
-            padding: 8px 15px;
-            background-color: var(--apple-card);
-            color: var(--apple-blue);
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-        
-        .section-nav a:hover {
-            background-color: var(--apple-blue);
+
+        .category-tab.active {
+            background: var(--primary-color);
             color: white;
+            transform: scale(1.05);
         }
-        
-        @media (max-width: 768px) {
-            .card-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
-            .container {
-                padding: 15px;
-            }
+
+        .floating-animation {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .search-box {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .tool-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            border-color: var(--primary-color);
+            background: var(--bg-primary);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 50;
+            opacity: 0;
+            transform: translateY(100px);
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--primary-color);
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+
+        /* 自定义滚动条 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>站长工具导航</h1>
-            <p class="subtitle">精选开发资源与工具集合，助您快速找到各类优质资源，提升开发与站点运营效率</p>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-morphism fixed top-0 left-0 right-0 z-40 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                    <i class="fas fa-rocket text-white text-lg"></i>
+                </div>
+                <span class="text-xl font-bold" style="color: var(--text-primary);">站长工具导航</span>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <!-- Theme Toggle -->
+                <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-moon text-gray-600 dark:text-gray-300"></i>
+                </button>
+                
+                <!-- Menu Button for Mobile -->
+                <button id="menuToggle" class="md:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
+                    <i class="fas fa-bars text-gray-600 dark:text-gray-300"></i>
+                </button>
+            </div>
         </div>
-    </header>
-    
-    <div class="container">
-        <div class="section-nav">
-            <a href="#keywords">关键词研究</a>
-            <a href="#essentials">上站必备</a>
-            <a href="#templates">上站模版</a>
-            <a href="#navigation">导航站模版</a>
-            <a href="#research">竞品调研</a>
-            <a href="#info">资讯</a>
-            <a href="#articles">生财精品帖</a>
-        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-20"></div>
         
-        <div id="keywords" class="section">
-            <h2 class="section-title">关键词研究与需求收集</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-category">谷歌下拉词</div>
-                    <h3 class="card-title">Search Suggest Tips</h3>
-                    <p class="card-description">获取谷歌搜索下拉词建议，发现用户搜索意图</p>
-                    <a href="https://www.searchsuggest.tips/?keyword=" target="_blank" class="card-link">访问站点</a>
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 floating-animation">
+            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                <i class="fas fa-code text-white text-xl"></i>
+            </div>
+        </div>
+        <div class="absolute top-40 right-20 floating-animation" style="animation-delay: -2s;">
+            <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                <i class="fas fa-chart-line text-white"></i>
+            </div>
+        </div>
+        <div class="absolute bottom-40 left-20 floating-animation" style="animation-delay: -4s;">
+            <div class="w-14 h-14 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                <i class="fas fa-tools text-white text-lg"></i>
+            </div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                站长工具
+                <span class="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">导航</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-white text-opacity-90 mb-8 leading-relaxed">
+                精选开发资源与工具集合，助您快速找到各类优质资源<br>
+                提升开发与站点运营效率
+            </p>
+            
+            <!-- Search Box -->
+            <div class="max-w-2xl mx-auto mb-12">
+                <div class="relative">
+                    <input 
+                        type="text" 
+                        id="heroSearch"
+                        placeholder="搜索工具、资源、教程..." 
+                        class="w-full px-6 py-4 pl-14 text-lg rounded-2xl search-box text-gray-800 placeholder-gray-500 focus:outline-none"
+                        style="color: var(--text-primary);"
+                    >
+                    <i class="fas fa-search absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg"></i>
                 </div>
-                <div class="card">
-                    <div class="card-category">AI 工具榜单</div>
-                    <h3 class="card-title">Toolify 榜单</h3>
-                    <p class="card-description">查看热门 AI 工具排名，了解市场趋势</p>
-                    <a href="https://www.toolify.ai/Best-AI-Tools-revenue" target="_blank" class="card-link">访问站点</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">AI 导航站需求</div>
-                    <h3 class="card-title">There's An AI For That</h3>
-                    <p class="card-description">收集用户对 AI 工具的需求，发现潜在市场空白</p>
-                    <a href="https://theresanaiforthat.com/requests" target="_blank" class="card-link">访问站点</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">关键词难度分析</div>
-                    <h3 class="card-title">Ahrefs 关键词难度</h3>
-                    <p class="card-description">分析关键词竞争难度，优化 SEO 策略</p>
-                    <a href="https://ahrefs.com/keyword-difficulty" target="_blank" class="card-link">访问站点</a>
-                </div>
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#categories" class="bg-white bg-opacity-20 hover:bg-opacity-30 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 flex items-center space-x-2">
+                    <i class="fas fa-rocket"></i>
+                    <span>开始探索</span>
+                </a>
+                <a href="#visualization" class="border-2 border-white border-opacity-30 hover:border-opacity-50 text-white px-8 py-4 rounded-xl font-medium transition-all duration-300 flex items-center space-x-2">
+                    <i class="fas fa-chart-network"></i>
+                    <span>可视化图表</span>
+                </a>
             </div>
         </div>
         
-        <div id="essentials" class="section">
-            <h2 class="section-title">上站必备网页</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-category">域名查询</div>
-                    <h3 class="card-title">Query Domains</h3>
-                    <p class="card-description">快速查询域名可用性，找到合适的域名</p>
-                    <a href="https://query.domains/" target="_blank" class="card-link">访问站点</a>
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl opacity-70"></i>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="relative z-20" style="background: var(--bg-secondary);">
+        <!-- Category Navigation -->
+        <section id="categories" class="py-16">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4" style="color: var(--text-primary);">工具分类</h2>
+                    <p class="text-xl" style="color: var(--text-secondary);">选择您需要的工具类型</p>
                 </div>
-                <div class="card">
-                    <div class="card-category">域名查询</div>
-                    <h3 class="card-title">Instant Domain Search</h3>
-                    <p class="card-description">即时域名搜索，实时显示域名可用状态</p>
-                    <a href="https://instantdomainsearch.com/?q=" target="_blank" class="card-link">访问站点</a>
+                
+                <!-- Category Tabs -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12" id="categoryTabs">
+                    <button class="category-tab px-6 py-3 font-medium transition-all" data-category="需求收集和关键词调研">
+                        <i class="fas fa-search mr-2"></i>关键词研究
+                    </button>
+                    <button class="category-tab px-6 py-3 font-medium transition-all" data-category="上站必备网页">
+                        <i class="fas fa-globe mr-2"></i>上站必备
+                    </button>
+                    <button class="category-tab px-6 py-3 font-medium transition-all" data-category="竞品调研">
+                        <i class="fas fa-chart-line mr-2"></i>竞品调研
+                    </button>
+                    <button class="category-tab px-6 py-3 font-medium transition-all" data-category="上站模版">
+                        <i class="fas fa-code mr-2"></i>网站模板
+                    </button>
+                    <button class="category-tab px-6 py-3 font-medium transition-all" data-category="导航站模版">
+                        <i class="fas fa-compass mr-2"></i>导航模板
+                    </button>
+                    <button class="category-tab px-6 py-3 font-medium transition-all" data-category="资讯">
+                        <i class="fas fa-newspaper mr-2"></i>资讯
+                    </button>
+                    <button class="category-tab px-6 py-3 font-medium transition-all" data-category="生财精品帖">
+                        <i class="fas fa-star mr-2"></i>精品帖
+                    </button>
                 </div>
-                <div class="card">
-                    <div class="card-category">域名注册</div>
-                    <h3 class="card-title">Spaceship</h3>
-                    <p class="card-description">专业域名注册服务提供商</p>
-                    <a href="https://spaceship.com" target="_blank" class="card-link">访问站点</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">域名注册</div>
-                    <h3 class="card-title">Porkbun</h3>
-                    <p class="card-description">提供优惠域名注册服务</p>
-                    <a href="https://porkbun.com" target="_blank" class="card-link">访问站点</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">代码 & 网站托管</div>
-                    <h3 class="card-title">GitHub</h3>
-                    <p class="card-description">代码托管平台，支持项目协作和版本控制</p>
-                    <a href="https://github.com" target="_blank" class="card-link">访问站点</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">代码 & 网站托管</div>
-                    <h3 class="card-title">Vercel</h3>
-                    <p class="card-description">前端项目部署和托管平台，支持静态网站与 Serverless Functions</p>
-                    <a href="https://vercel.com" target="_blank" class="card-link">访问站点</a>
+                
+                <!-- Tools Grid -->
+                <div id="toolsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Tools will be dynamically loaded here -->
                 </div>
             </div>
-        </div>
-        
-        <div id="research" class="section">
-            <h2 class="section-title">竞品调研</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-category">查看流量和网页关键词</div>
-                    <h3 class="card-title">aitdk.com</h3>
-                    <p class="card-description">分析网站流量和关键词排名数据</p>
-                    <a href="https://aitdk.com" target="_blank" class="card-link">访问站点</a>
+        </section>
+
+        <!-- Data Visualization -->
+        <section id="visualization" class="py-16" style="background: var(--bg-primary);">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4" style="color: var(--text-primary);">工具生态图</h2>
+                    <p class="text-xl" style="color: var(--text-secondary);">可视化展示工具分类与关系</p>
                 </div>
-                <div class="card">
-                    <div class="card-category">查看外链</div>
-                    <h3 class="card-title">Ahrefs 免费 SEO 工具</h3>
-                    <p class="card-description">查看网站外链情况，分析反向链接质量</p>
-                    <a href="https://ahrefs.com/free-seo-tools" target="_blank" class="card-link">访问站点</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">查看网站关键词</div>
-                    <h3 class="card-title">Semrush</h3>
-                    <p class="card-description">全面分析网站关键词和搜索表现</p>
-                    <a href="https://semrush.com" target="_blank" class="card-link">访问站点</a>
+                
+                <div class="rounded-2xl shadow-2xl p-8" style="background: var(--bg-secondary);">
+                    <div id="mermaidChart" class="w-full overflow-x-auto"></div>
                 </div>
             </div>
-        </div>
-        
-        <div id="templates" class="section">
-            <h2 class="section-title">上站模版</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-category">博客框架</div>
-                    <h3 class="card-title">Cloudflare 动态博客</h3>
-                    <p class="card-description">基于 Cloudflare 生态的动态博客，集成 Pages、Workers、D1 数据库和 R2 存储</p>
-                    <a href="https://github.com/openRin/Rin" target="_blank" class="card-link">查看项目</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">Next.js 框架</div>
-                    <h3 class="card-title">Next.js Boilerplate</h3>
-                    <p class="card-description">支持 Next.js 15 的 App Router 和 Page Router 双模式启动模板</p>
-                    <a href="https://github.com/ixartz/Next-js-Boilerplate" target="_blank" class="card-link">查看项目</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">SaaS 框架</div>
-                    <h3 class="card-title">SaaS Boilerplate</h3>
-                    <p class="card-description">基于 Next.js + Tailwind CSS + Shadcn UI + TypeScript 的 SaaS 项目骨架</p>
-                    <a href="https://github.com/ixartz/SaaS-Boilerplate" target="_blank" class="card-link">查看项目</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">着陆页模板</div>
-                    <h3 class="card-title">Next.js Landing Page</h3>
-                    <p class="card-description">免费的 Next.js 着陆页模板，适合产品营销场景</p>
-                    <a href="https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template" target="_blank" class="card-link">查看项目</a>
+        </section>
+
+        <!-- Statistics -->
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center fade-in">
+                        <div class="text-4xl font-bold text-blue-600 mb-2" id="toolCount">0</div>
+                        <div style="color: var(--text-secondary);">工具总数</div>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="text-4xl font-bold text-green-600 mb-2">7</div>
+                        <div style="color: var(--text-secondary);">分类数量</div>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">24h</div>
+                        <div style="color: var(--text-secondary);">更新频率</div>
+                    </div>
+                    <div class="text-center fade-in">
+                        <div class="text-4xl font-bold text-orange-600 mb-2">100%</div>
+                        <div style="color: var(--text-secondary);">免费使用</div>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div id="navigation" class="section">
-            <h2 class="section-title">导航站模版</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-category">导航平台</div>
-                    <h3 class="card-title">FRE123 免费资源共享导航</h3>
-                    <p class="card-description">支持一键搭建免费资源导航网站，适合快速部署资源聚合平台</p>
-                    <a href="https://github.com/fre123-com/fre123-nav/" target="_blank" class="card-link">查看项目</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-rocket text-white text-lg"></i>
+                        </div>
+                        <span class="text-xl font-bold">站长工具导航</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed">
+                        精选开发资源与工具集合，助您快速找到各类优质资源，提升开发与站点运营效率。
+                    </p>
                 </div>
-                <div class="card">
-                    <div class="card-category">开源项目集合</div>
-                    <h3 class="card-title">OSS Gallery</h3>
-                    <p class="card-description">基于 Dub TypeScript SDK 构建的开源项目合集，通过社区众包方式收录优质开源项目</p>
-                    <a href="https://github.com/dubinc/oss-gallery?ref=ossgallery" target="_blank" class="card-link">查看项目</a>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#categories" class="text-gray-400 hover:text-white transition-colors">工具分类</a></li>
+                        <li><a href="#visualization" class="text-gray-400 hover:text-white transition-colors">可视化图表</a></li>
+                        <li><a href="https://github.com" class="text-gray-400 hover:text-white transition-colors">GitHub</a></li>
+                    </ul>
                 </div>
-                <div class="card">
-                    <div class="card-category">网址导航</div>
-                    <h3 class="card-title">WebStack.cc</h3>
-                    <p class="card-description">静态响应式网址导航模板，界面简洁，适配多设备访问</p>
-                    <a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank" class="card-link">查看项目</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">AI 工具导航</div>
-                    <h3 class="card-title">Tap4 AI WebUI</h3>
-                    <p class="card-description">开源的 AI 工具目录网站，支持一键部署，快速搭建 AI 工具聚合平台</p>
-                    <a href="https://github.com/6677-ai/tap4-ai-webui" target="_blank" class="card-link">查看项目</a>
-                </div>
-            </div>
-        </div>
-        
-        <div id="info" class="section">
-            <h2 class="section-title">资讯</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-category">SEO 知识</div>
-                    <h3 class="card-title">谷歌搜索中心：SEO 基础知识</h3>
-                    <p class="card-description">谷歌官方提供的 SEO 基础知识文档，以中文呈现，帮助网站开发者和内容创作者了解如何创建对搜索友好的内容</p>
-                    <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=zh-cn" target="_blank" class="card-link">访问站点</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">网站趋势</div>
-                    <h3 class="card-title">Ahrefs 热门网站</h3>
-                    <p class="card-description">查看不同行业、地区的热门网站趋势，为市场分析、竞品研究等提供参考</p>
-                    <a href="https://ahrefs.com/websites#trending" target="_blank" class="card-link">访问站点</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">创业报告</div>
-                    <h3 class="card-title">个人开发者收入排行榜</h3>
-                    <p class="card-description">由starterstory.com出品的个人开发者收入排行榜及创业点子来源文档</p>
-                    <a href="https://docs.google.com/spreadsheets/d/1eUni44pIURML2VWFFXKzNmm-WKuuam9_ynr5Fo_Q74M/edit?gid=83151001#gid=83151001" target="_blank" class="card-link">查看报告</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">副业项目</div>
-                    <h3 class="card-title">500MRR</h3>
-                    <p class="card-description">收集并分析 Hacker News 社区里那些 "通过副业盈利 500 美元/月的项目" 的讨论</p>
-                    <a href="https://www.500mrr.com/" target="_blank" class="card-link">访问站点</a>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">联系我们</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-500 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div id="articles" class="section">
-            <h2 class="section-title">生财精品帖</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-category">2025-03-01</div>
-                    <h3 class="card-title">不要轻易称自己为独立开发者</h3>
-                    <p class="card-description">关于独立开发者身份认知和定位的思考</p>
-                    <a href="https://scsys.com/articleDetail/xq_topic/15258184485844482" target="_blank" class="card-link">阅读文章</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">2025-02-06</div>
-                    <h3 class="card-title">AI 编程赛道第一课：Build a business, not an App</h3>
-                    <p class="card-description">AI时代开发者如何思考商业而非仅关注技术</p>
-                    <a href="https://scsys.com/articleDetail/xq_topic/2858151258225521" target="_blank" class="card-link">阅读文章</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">2024-11-13</div>
-                    <h3 class="card-title">只靠想法就能赚钱的时代到来了！</h3>
-                    <p class="card-description">探讨AI时代创意和想法的商业价值</p>
-                    <a href="https://scsys.com/articleDetail/xq_topic/4848511545851418" target="_blank" class="card-link">阅读文章</a>
-                </div>
-                <div class="card">
-                    <div class="card-category">2024-11-05</div>
-                    <h3 class="card-title">翻石头，是独立开发者的日常修行</h3>
-                    <p class="card-description">独立开发者如何持续发现机会和解决问题</p>
-                    <a href="https://scsys.com/articleDetail/xq_topic/5121548228815414" target="_blank" class="card-link">阅读文章</a>
-                </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 站长工具导航. All rights reserved.</p>
             </div>
-        </div>
-    </div>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 站长工具导航 | 精选资源集合</p>
         </div>
     </footer>
-    
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // 平滑滚动
-            document.querySelectorAll('.section-nav a').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+        // Initialize Mermaid
+        mermaid.initialize({
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#3b82f6',
+                primaryTextColor: '#1f2937',
+                primaryBorderColor: '#2563eb',
+                lineColor: '#6b7280',
+                secondaryColor: '#f3f4f6',
+                tertiaryColor: '#ffffff'
+            }
+        });
+
+        // Navigation data - will be loaded from external file
+        let navigationData = {};
+        
+        // Load data from navigation_data.json
+        fetch('navigation_data.json')
+            .then(response => response.json())
+            .then(data => {
+                navigationData = data;
+                initializeApp();
+            })
+            .catch(error => {
+                console.error('Error loading navigation data:', error);
+                // Use fallback data
+                navigationData = {
+                    "需求收集和关键词调研": [
+                        {
+                            "平台名称": "Search Suggest Tips",
+                            "分类": "谷歌下拉词",
+                            "链接 / 网址": "https://www.searchsuggest.tips/?keyword="
+                        }
+                    ]
+                };
+                initializeApp();
+            });
+
+        function initializeApp() {
+            setupThemeToggle();
+            setupScrollEffects();
+            setupCategoryTabs();
+            setupSearch();
+            setupBackToTop();
+            setupAnimations();
+            renderMermaidChart();
+            loadDefaultCategory();
+            updateToolCount();
+        }
+
+        // Theme Toggle
+        function setupThemeToggle() {
+            const themeToggle = document.getElementById('themeToggle');
+            const html = document.documentElement;
+            
+            // Check for saved theme preference or default to system preference
+            const savedTheme = localStorage.getItem('theme');
+            const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            const currentTheme = savedTheme || systemTheme;
+            
+            html.setAttribute('data-theme', currentTheme);
+            updateThemeIcon(currentTheme);
+            
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+        }
+
+        function updateThemeIcon(theme) {
+            const icon = document.querySelector('#themeToggle i');
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        // Scroll Effects
+        function setupScrollEffects() {
+            const progressBar = document.getElementById('progressBar');
+            
+            window.addEventListener('scroll', () => {
+                const scrollProgress = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                progressBar.style.width = scrollProgress + '%';
+                
+                // Fade in animations
+                const fadeElements = document.querySelectorAll('.fade-in');
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    if (elementTop < window.innerHeight - 100) {
+                        element.classList.add('visible');
+                    }
                 });
             });
-        });
+        }
+
+        // Category Tabs
+        function setupCategoryTabs() {
+            const tabs = document.querySelectorAll('.category-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    // Load tools for this category
+                    loadToolsForCategory(tab.dataset.category);
+                });
+            });
+        }
+
+        // Search Functionality
+        function setupSearch() {
+            const searchBox = document.getElementById('heroSearch');
+            searchBox.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase();
+                filterTools(query);
+            });
+        }
+
+        // Back to Top
+        function setupBackToTop() {
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Animations
+        function setupAnimations() {
+            // Trigger fade-in animations on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Load tools for category
+        function loadToolsForCategory(category) {
+            const toolsGrid = document.getElementById('toolsGrid');
+            const tools = navigationData[category] || [];
+            
+            toolsGrid.innerHTML = '';
+            
+            tools.forEach((tool, index) => {
+                const toolCard = createToolCard(tool, category, index);
+                toolsGrid.appendChild(toolCard);
+            });
+        }
+
+        // Create tool card
+        function createToolCard(tool, category, index) {
+            const card = document.createElement('div');
+            card.className = 'tool-card card-hover p-6 rounded-xl fade-in';
+            card.style.animationDelay = `${index * 0.1}s`;
+            
+            let title, description, link;
+            
+            // Handle different data structures
+            if (category === '需求收集和关键词调研' || category === '竞品调研') {
+                title = tool['平台名称'] || tool.title || '未知工具';
+                description = tool['分类'] || tool.description || '暂无描述';
+                link = tool['链接 / 网址'] || tool.link || '#';
+            } else if (category === '上站必备网页') {
+                title = Object.values(tool)[1] || '未知工具';
+                description = Object.keys(tool)[0] || '暂无描述';
+                link = Object.values(tool)[2] || '#';
+            } else if (category === '资讯') {
+                title = tool['平台名称'] || tool.title || '未知资讯';
+                description = tool['简介'] || tool.description || '暂无描述';
+                link = tool['链接'] || tool.link || '#';
+            } else if (category === '生财精品帖') {
+                title = tool['标题'] || tool.title || '未知文章';
+                description = `发布日期: ${tool['日期'] || '未知'}`;
+                link = tool['链接'] || tool.link || '#';
+            } else {
+                title = tool['Unnamed: 2'] || tool.title || '未知项目';
+                description = tool['Unnamed: 4'] || tool.description || '暂无描述';
+                link = tool['Unnamed: 3'] || tool.link || '#';
+            }
+            
+            card.innerHTML = `
+                <div class="flex items-start justify-between mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-${getIconForCategory(category)} text-white"></i>
+                    </div>
+                    <a href="${link}" target="_blank" class="text-blue-600 hover:text-blue-800 transition-colors">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <h3 class="font-semibold text-lg mb-2 line-clamp-2" style="color: var(--text-primary);">${title}</h3>
+                <p class="text-sm mb-4 line-clamp-3" style="color: var(--text-secondary);">${description}</p>
+                <a href="${link}" target="_blank" class="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-800 font-medium transition-colors">
+                    <span>访问网站</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            `;
+            
+            return card;
+        }
+
+        // Get icon for category
+        function getIconForCategory(category) {
+            const icons = {
+                '需求收集和关键词调研': 'search',
+                '上站必备网页': 'globe',
+                '竞品调研': 'chart-line',
+                '上站模版': 'code',
+                '导航站模版': 'compass',
+                '资讯': 'newspaper',
+                '生财精品帖': 'star'
+            };
+            return icons[category] || 'tools';
+        }
+
+        // Filter tools
+        function filterTools(query) {
+            const toolCards = document.querySelectorAll('.tool-card');
+            toolCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(query) || description.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Load default category
+        function loadDefaultCategory() {
+            const firstTab = document.querySelector('.category-tab');
+            if (firstTab) {
+                firstTab.classList.add('active');
+                loadToolsForCategory(firstTab.dataset.category);
+            }
+        }
+
+        // Update tool count
+        function updateToolCount() {
+            let totalTools = 0;
+            Object.values(navigationData).forEach(category => {
+                if (Array.isArray(category)) {
+                    totalTools += category.length;
+                }
+            });
+            
+            const toolCountElement = document.getElementById('toolCount');
+            let currentCount = 0;
+            const increment = Math.ceil(totalTools / 50);
+            
+            const counter = setInterval(() => {
+                currentCount += increment;
+                if (currentCount >= totalTools) {
+                    currentCount = totalTools;
+                    clearInterval(counter);
+                }
+                toolCountElement.textContent = currentCount;
+            }, 50);
+        }
+
+        // Render Mermaid Chart
+        function renderMermaidChart() {
+            const chartElement = document.getElementById('mermaidChart');
+            const mermaidCode = `
+                graph TD
+                    A[站长工具导航] --> B[关键词研究]
+                    A --> C[上站必备]
+                    A --> D[竞品调研]
+                    A --> E[网站模板]
+                    A --> F[导航模板]
+                    A --> G[资讯中心]
+                    A --> H[精品帖子]
+                    
+                    B --> B1[Search Suggest Tips]
+                    B --> B2[Toolify 榜单]
+                    B --> B3[AI 导航站需求]
+                    B --> B4[关键词难度分析]
+                    
+                    C --> C1[域名查询]
+                    C --> C2[网站托管]
+                    C --> C3[数据分析]
+                    
+                    D --> D1[流量分析]
+                    D --> D2[外链查看]
+                    D --> D3[关键词追踪]
+                    
+                    E --> E1[博客框架]
+                    E --> E2[SaaS 模板]
+                    E --> E3[着陆页模板]
+                    
+                    F --> F1[导航平台]
+                    F --> F2[AI 工具导航]
+                    F --> F3[开源项目集合]
+                    
+                    style A fill:#3b82f6,stroke:#1e40af,stroke-width:3px,color:#fff
+                    style B fill:#10b981,stroke:#059669,stroke-width:2px,color:#fff
+                    style C fill:#f59e0b,stroke:#d97706,stroke-width:2px,color:#fff
+                    style D fill:#ef4444,stroke:#dc2626,stroke-width:2px,color:#fff
+                    style E fill:#8b5cf6,stroke:#7c3aed,stroke-width:2px,color:#fff
+                    style F fill:#06b6d4,stroke:#0891b2,stroke-width:2px,color:#fff
+                    style G fill:#f97316,stroke:#ea580c,stroke-width:2px,color:#fff
+                    style H fill:#ec4899,stroke:#db2777,stroke-width:2px,color:#fff
+            `;
+            
+            mermaid.render('mermaidChart', mermaidCode).then(({ svg }) => {
+                chartElement.innerHTML = svg;
+            });
+        }
     </script>
 </body>
-</html> 
+</html>
