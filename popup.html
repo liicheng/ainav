@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 10px;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+    }
+    #results {
+      margin-top: 10px;
+    }
+    .rating-bar {
+      display: flex;
+      align-items: center;
+      margin: 5px 0;
+    }
+    .rating-bar .bar {
+      background: #ffd700;
+      height: 10px;
+      margin: 0 10px;
+      min-width: 1px;
+    }
+    #status {
+      font-size: 0.9em;
+    }
+    .controls button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <button id="scrapeButton">开始抓取</button>
+  <div id="results"></div>
+  <script src="popup.js"></script>
+</body>
+</html> 

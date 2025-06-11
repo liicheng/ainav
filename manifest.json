@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "亚马逊商品爬虫",
+  "version": "1.0",
+  "description": "抓取亚马逊商品信息的Chrome扩展",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.amazon.com/*",
+    "https://*.amazon.cn/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
