@@ -1,0 +1,381 @@
+{
+  "需求收集和关键词调研": [
+    {
+      "分类": "谷歌下拉词",
+      "平台名称": "Search Suggest Tips",
+      "链接 / 网址": "https://www.searchsuggest.tips/?keyword="
+    },
+    {
+      "分类": "AI 工具榜单",
+      "平台名称": "Toolify 榜单",
+      "链接 / 网址": "https://www.toolify.ai/Best-AI-Tools-revenue"
+    },
+    {
+      "分类": "AI 导航站需求",
+      "平台名称": "There's An AI For That",
+      "链接 / 网址": "https://theresanaiforthat.com/requests"
+    },
+    {
+      "分类": "关键词难度分析",
+      "平台名称": "Ahrefs 关键词难度",
+      "链接 / 网址": "https://ahrefs.com/keyword-difficulty"
+    }
+  ],
+  "上站必备网页": [
+    {
+      "域名查询": "域名查询",
+      "Leandomainsearch": "Query Domains",
+      "https://leandomainsearch.com/": "https://query.domains/"
+    },
+    {
+      "域名查询": "域名查询",
+      "Leandomainsearch": "Instant Domain Search",
+      "https://leandomainsearch.com/": "https://instantdomainsearch.com/?q="
+    },
+    {
+      "域名查询": "域名注册",
+      "Leandomainsearch": "Spaceship",
+      "https://leandomainsearch.com/": "spaceship.com"
+    },
+    {
+      "域名查询": "域名注册",
+      "Leandomainsearch": "Porkbun",
+      "https://leandomainsearch.com/": "porkbun.com"
+    },
+    {
+      "域名查询": "域名注册",
+      "Leandomainsearch": "Namecheap",
+      "https://leandomainsearch.com/": "namecheap.com"
+    },
+    {
+      "域名查询": "代码 & 网站托管",
+      "Leandomainsearch": "GitHub",
+      "https://leandomainsearch.com/": "github.com"
+    },
+    {
+      "域名查询": "代码 & 网站托管",
+      "Leandomainsearch": "Cloudflare",
+      "https://leandomainsearch.com/": "Cloudflare.com"
+    },
+    {
+      "域名查询": "代码 & 网站托管",
+      "Leandomainsearch": "Vercel",
+      "https://leandomainsearch.com/": "vercel.com"
+    },
+    {
+      "域名查询": "数据后台",
+      "Leandomainsearch": "Google Search Console",
+      "https://leandomainsearch.com/": "https://search.google.com/search-console"
+    },
+    {
+      "域名查询": "数据后台",
+      "Leandomainsearch": "Google Analytics",
+      "https://leandomainsearch.com/": "https://analytics.google.com/analytics/web/#"
+    },
+    {
+      "域名查询": "数据后台",
+      "Leandomainsearch": "Bing 网站管理员工具",
+      "https://leandomainsearch.com/": "https://www.bing.com/webmasters/submiturl"
+    }
+  ],
+  "竞品调研": [
+    {
+      "分类": "查看流量和网页关键词",
+      "平台名称": "aitdk.com",
+      "链接 / 网址": "aitdk.com"
+    },
+    {
+      "分类": "查看外链",
+      "平台名称": "Ahrefs 免费 SEO 工具",
+      "链接 / 网址": "https://ahrefs.com/free-seo-tools"
+    },
+    {
+      "分类": "查看网站关键词",
+      "平台名称": "Semrush",
+      "链接 / 网址": "semrush.com"
+    }
+  ],
+  "上站模版": [
+    {
+      "Unnamed: 1": "分类",
+      "Unnamed: 2": "项目名称",
+      "Unnamed: 3": "链接",
+      "Unnamed: 4": "项目特点"
+    },
+    {
+      "Unnamed: 1": "博客框架",
+      "Unnamed: 2": "Dynamic blog based on Cloudflare Pages + Workers + D1 + R2",
+      "Unnamed: 3": "https://github.com/openRin/Rin",
+      "Unnamed: 4": "基于 Cloudflare 生态的动态博客，集成 Pages、Workers、D1 数据库和 R2 存储"
+    },
+    {
+      "Unnamed: 1": "Next.js 框架",
+      "Unnamed: 2": "Next.js Boilerplate",
+      "Unnamed: 3": "https://github.com/ixartz/Next-js-Boilerplate",
+      "Unnamed: 4": "支持 Next.js 15 的 App Router 和 Page Router 双模式启动模板"
+    },
+    {
+      "Unnamed: 1": "SaaS 框架",
+      "Unnamed: 2": "SaaS Boilerplate",
+      "Unnamed: 3": "https://github.com/ixartz/SaaS-Boilerplate",
+      "Unnamed: 4": "基于 Next.js + Tailwind CSS + Shadcn UI + TypeScript 的 SaaS 项目骨架"
+    },
+    {
+      "Unnamed: 1": "着陆页模板",
+      "Unnamed: 2": "Next.js Landing Page Starter Template",
+      "Unnamed: 3": "https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template",
+      "Unnamed: 4": "免费的 Next.js 着陆页模板，适合产品营销场景"
+    },
+    {
+      "Unnamed: 1": "Astro 框架",
+      "Unnamed: 2": "Astro boilerplate",
+      "Unnamed: 3": "https://github.com/ixartz/Astro-boilerplate",
+      "Unnamed: 4": "包含响应式博客和作品集模板的 Astro 启动项目"
+    },
+    {
+      "Unnamed: 1": "着陆页模板",
+      "Unnamed: 2": "landing-page-boilerplate",
+      "Unnamed: 3": "https://github.com/weijunext/landing-page-boilerplate",
+      "Unnamed: 4": "多功能着陆页模板，适用于各类项目和营销活动"
+    },
+    {
+      "Unnamed: 1": "AI 工具",
+      "Unnamed: 2": "Viggle AI WebUI",
+      "Unnamed: 3": "https://github.com/ai-aigc-studio/Viggle-AI-WebUI",
+      "Unnamed: 4": "Viggle AI 的开源 Web 客户端"
+    },
+    {
+      "Unnamed: 1": "博客项目",
+      "Unnamed: 2": "new-blog",
+      "Unnamed: 3": "https://github.com/weijunext/new-blog",
+      "Unnamed: 4": "周刊类型的博客项目"
+    },
+    {
+      "Unnamed: 1": "财经工具",
+      "Unnamed: 2": "gapis.money",
+      "Unnamed: 3": "https://github.com/weijunext/gapis.money",
+      "Unnamed: 4": "财经相关的博客或工具项目"
+    },
+    {
+      "Unnamed: 1": "产品截图工具",
+      "Unnamed: 2": "huntscreens",
+      "Unnamed: 3": "https://github.com/daimajia/huntscreens",
+      "Unnamed: 4": "自动截取 Producthunt、YC、Indiehackers 新项目截图的工具"
+    },
+    {
+      "Unnamed: 1": "Excel 工具",
+      "Unnamed: 2": "smart-excel-ai",
+      "Unnamed: 3": "https://github.com/weijunext/smart-excel-ai",
+      "Unnamed: 4": "利用 ChatGPT 生成 Excel 公式的 AI 工具"
+    },
+    {
+      "Unnamed: 1": "Next.js 部署示例",
+      "Unnamed: 2": "NextJS VPS Example",
+      "Unnamed: 3": "https://github.com/ashleyrudland/nextjs_vps",
+      "Unnamed: 4": "Next.js 在 VPS 上的部署示例"
+    },
+    {
+      "Unnamed: 1": "AI 换发型工具",
+      "Unnamed: 2": "change-hairstyle-ai",
+      "Unnamed: 3": "https://github.com/Pwntus/change-hairstyle-ai",
+      "Unnamed: 4": "基于 AI 的快速换发型工具"
+    },
+    {
+      "Unnamed: 1": "视频处理工具",
+      "Unnamed: 2": "green-screen-creator",
+      "Unnamed: 3": "https://github.com/replicate/green-screen-creator",
+      "Unnamed: 4": "视频对象追踪并添加绿幕背景的工具"
+    },
+    {
+      "Unnamed: 1": "SaaS 框架",
+      "Unnamed: 2": "open-saas",
+      "Unnamed: 3": "https://github.com/wasp-lang/open-saas",
+      "Unnamed: 4": "免费开源的 React & Node.js SaaS 应用启动项目，社区驱动"
+    },
+    {
+      "Unnamed: 1": "Svelte SaaS 框架",
+      "Unnamed: 2": "justship",
+      "Unnamed: 3": "https://github.com/ocluf/justship",
+      "Unnamed: 4": "Svelte 5 + SvelteKit 的 SaaS 模板，包含数据库、认证、邮件等功能"
+    },
+    {
+      "Unnamed: 1": "SaaS 框架",
+      "Unnamed: 2": "supanuxt-saas",
+      "Unnamed: 3": "https://github.com/JavascriptMick/supanuxt-saas",
+      "Unnamed: 4": "基于 Nuxt3 + Supabase 的 SaaS 模板，集成 OAuth、Prisma、TRPC 等"
+    },
+    {
+      "Unnamed: 1": "SaaS 框架",
+      "Unnamed: 2": "saasfly",
+      "Unnamed: 3": "https://github.com/saasfly/saasfly",
+      "Unnamed: 4": "基于 Bun 的 SaaS 启动模板，支持bun create saasfly快速初始化"
+    },
+    {
+      "Unnamed: 1": "社交平台",
+      "Unnamed: 2": "xlike-web",
+      "Unnamed: 3": "https://github.com/mundane799699/xlike-web",
+      "Unnamed: 4": "TypeScript 构建的社交平台项目（类似 X/Twitter）"
+    }
+  ],
+  "导航站模版": [
+    {
+      "Unnamed: 1": "分类",
+      "Unnamed: 2": "项目名称",
+      "Unnamed: 3": "链接",
+      "Unnamed: 4": "项目特点"
+    },
+    {
+      "Unnamed: 1": "导航平台",
+      "Unnamed: 2": "FRE123 免费资源共享导航",
+      "Unnamed: 3": "https://github.com/fre123-com/fre123-nav/",
+      "Unnamed: 4": "支持一键搭建免费资源导航网站，适合快速部署资源聚合平台"
+    },
+    {
+      "Unnamed: 1": "开源项目集合",
+      "Unnamed: 2": "OSS Gallery",
+      "Unnamed: 3": "https://github.com/dubinc/oss-gallery?ref=ossgallery",
+      "Unnamed: 4": "基于 Dub TypeScript SDK 构建的开源项目合集，通过社区众包方式收录优质开源项目"
+    },
+    {
+      "Unnamed: 1": "网址导航",
+      "Unnamed: 2": "WebStack.cc",
+      "Unnamed: 3": "https://github.com/WebStackPage/WebStackPage.github.io",
+      "Unnamed: 4": "静态响应式网址导航模板，界面简洁，适配多设备访问"
+    },
+    {
+      "Unnamed: 1": "AI 工具导航",
+      "Unnamed: 2": "Tap4 AI WebUI",
+      "Unnamed: 3": "https://github.com/6677-ai/tap4-ai-webui",
+      "Unnamed: 4": "开源的 AI 工具目录网站，支持一键部署，快速搭建 AI 工具聚合平台"
+    },
+    {
+      "Unnamed: 1": "GPT 工具商店",
+      "Unnamed: 2": "GPTs Works",
+      "Unnamed: 3": "https://github.com/all-in-aigc/gpts-works",
+      "Unnamed: 4": "第三方 GPT 工具商店，可用于展示和管理各类 GPT 应用"
+    },
+    {
+      "Unnamed: 1": "UI 库选择器",
+      "Unnamed: 2": "Vue 3/Nuxt 3 UI Lib Picker",
+      "Unnamed: 3": "https://github.com/ddahan/ui-libs",
+      "Unnamed: 4": "帮助开发者快速选择 Vue 3 和 Nuxt 3 适用的 UI 库，提供可视化筛选功能"
+    },
+    {
+      "Unnamed: 1": "AI 工具数据",
+      "Unnamed: 2": "DokeyAI 公开数据",
+      "Unnamed: 3": "https://github.com/DokeyAI/dokeyai-data",
+      "Unnamed: 4": "为https://dokeyai.com网站提供的 AI 工具公开数据，支持 API 调用或数据下载"
+    }
+  ],
+  "资讯": [
+    {
+      "分类": "Reddit 子社区相关",
+      "平台名称": "Notion 页面（Reddit 子社区相关）",
+      "链接": "https://liberating - doll - b8a.notion.site/Reddit - 1a8e8aed91b18021839ecba8b74e530b",
+      "简介": "该链接指向一个 Notion 页面，内容可能与 Reddit 子社区相关，具体信息需访问页面查看，可能包含 Reddit 子社区的介绍、分类、热门话题等内容。"
+    },
+    {
+      "分类": "SEO 知识",
+      "平台名称": "谷歌搜索中心：SEO 基础知识",
+      "链接": "https://developers.google.com/search/docs/fundamentals/creating - helpful - content?hl=zh - cn",
+      "简介": "谷歌官方提供的 SEO 基础知识文档，以中文呈现，帮助网站开发者和内容创作者了解如何创建对搜索友好的内容，掌握 SEO 的基本原理和最佳实践，提升网站在谷歌搜索结果中的排名。"
+    },
+    {
+      "分类": "网站趋势",
+      "平台名称": "Ahrefs 热门网站",
+      "链接": "https://ahrefs.com/websites#trending",
+      "简介": "Ahrefs 是知名的 SEO 工具平台，此页面展示了当前热门网站情况，用户可以通过该页面了解不同行业、地区的热门网站趋势，为市场分析、竞品研究等提供参考。"
+    },
+    {
+      "分类": "AI 工具",
+      "平台名称": "AI VIDEO SAAS TOOL",
+      "链接": "https://docs.google.com/spreadsheets/d/1QOdqq9KbjQj1JZO43vc1pir2rnEEsMUXzTDATrOCn2k/edit?gid=0#gid=0",
+      "简介": "一个 Google Sheets 链接，可能收录了有关 AI 视频 SaaS 工具的相关信息，如工具列表、功能介绍、使用指南、价格对比等，方便用户查找和比较不同的 AI 视频 SaaS 工具。"
+    },
+    {
+      "分类": "创业报告",
+      "平台名称": "Starter Story Premium Solopreneur Report 2.0",
+      "链接": "https://docs.google.com/spreadsheets/d/1eUni44pIURML2VWFFXKzNmm - WKuuam9_ynr5Fo_Q74M/edit?gid=83151001#gid=83151001",
+      "简介": "由starterstory.com出品的个人开发者收入排行榜及创业点子来源文档。通过该表格可了解独立开发者的收入情况、成功案例及创业思路，为有创业想法的人提供参考。"
+    },
+    {
+      "分类": "副业项目",
+      "平台名称": "500MRR",
+      "链接": "https://www.500mrr.com/",
+      "简介": "该网站专门收集并分析 Hacker News 社区里那些 “通过副业盈利 500 美元 / 月的项目” 的讨论，借助 AI 分析能力，梳理项目表现、收入和存活情况等，为想要开展副业的人提供灵感和参考。"
+    },
+    {
+      "分类": "副业项目讨论",
+      "平台名称": "Hacker News 相关讨论",
+      "链接": "https://news.ycombinator.com/item?id=42373343",
+      "简介": "Hacker News 上关于 2024 年每月通过副业赚取 500 美元项目的展示和讨论页面，用户可以在该页面查看其他用户分享的副业项目经验、成果及相关讨论，获取副业创业的思路和建议。"
+    }
+  ],
+  "生财精品帖": [
+    {
+      "标题": "不要轻易称自己为独立开发者",
+      "日期": "2025-03-01",
+      "链接": "https://scsys.com/articleDetail/xq_topic/15258184485844482"
+    },
+    {
+      "标题": "AI 编程赛道第一课：Build a business ， not an App",
+      "日期": "2025-02-06",
+      "链接": "https://scsys.com/articleDetail/xq_topic/2858151258225521"
+    },
+    {
+      "标题": "只靠想法就能赚钱的时代到来了！",
+      "日期": "2024-11-13",
+      "链接": "https://scsys.com/articleDetail/xq_topic/4848511545851418"
+    },
+    {
+      "标题": "翻石头，是独立开发者的日常修行。",
+      "日期": "2024-11-05",
+      "链接": "https://scsys.com/articleDetail/xq_topic/5121548228815414"
+    },
+    {
+      "标题": "用 AI 自学编程的最好时机到来了",
+      "日期": "2024-07-23",
+      "链接": "https://scsys.com/articleDetail/xq_topic/5122484888125484"
+    },
+    {
+      "标题": "善用黑科技工具，做十倍速全栈程序员",
+      "日期": "2023-08-20",
+      "链接": "https://scsys.com/articleDetail/xq_topic/188545124485142"
+    },
+    {
+      "标题": "什么产品好做？三个一",
+      "日期": "2023-12-07",
+      "链接": "https://scsys.com/articleDetail/xq_topic/811452228445512"
+    },
+    {
+      "标题": "写给独立开发者：如何快速做出产品 MVP",
+      "日期": "2023-02-09",
+      "链接": "https://scsys.com/articleDetail/xq_topic/814822455488822"
+    },
+    {
+      "标题": "如何获得产品 Idea",
+      "日期": "2022-11-10",
+      "链接": "https://scsys.com/articleDetail/xq_topic/212485241245121"
+    },
+    {
+      "标题": "完美的创业项目，是怎么被想出来的？",
+      "日期": "2022-05-11",
+      "链接": "https://scsys.com/articleDetail/xq_topic/415414825512158"
+    },
+    {
+      "标题": "判断项目行不行的极简方法",
+      "日期": "2022-04-25",
+      "链接": "https://scsys.com/articleDetail/xq_topic/184214255522812"
+    },
+    {
+      "标题": "2021 年 Google SEO 最关键有效的技巧・站内",
+      "日期": "2021-09-10",
+      "链接": "https://scsys.com/articleDetail/xq_topic/218514241452421"
+    },
+    {
+      "标题": "0 资源，做出 3 个日 UV 过十万、7 - 8 个日 UV 过万的网站，分享我获得无限网站流量的秘籍",
+      "日期": "2021-06-21",
+      "链接": "https://scsys.com/articleDetail/xq_topic/182888851425182"
+    }
+  ]
+}
